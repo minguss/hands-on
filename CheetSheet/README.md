@@ -19,8 +19,10 @@ helm install --name devops-sonarqube --namespace devops stable/sonarqube --tls
 # Jenkins 설정
 ``` bash
 ### 네임스페이스에 저장되어 있는 secret 목록을 불러옵니다.
+### kubectl get secret -n <namespace>
 kubectl get secret -n devops
  
+### kubectl get secret -n <namespace> <namespace>-jenkins -o yaml
 kubectl get secret -n devops devops-jenkins -o yaml
  
 ### secret에서 jenkins-admin-password정보를 복사합니다.
